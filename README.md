@@ -13,6 +13,8 @@ Currently this demo demonstrates the following features:
  - Sending mail
  - **But the framework has a lot more to offer...**
 
+![Screenshot of the Sample Site](public/asset/image/opera-sample-site-screenshot.png)
+
 
 Installation
 ------------
