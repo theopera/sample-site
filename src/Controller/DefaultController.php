@@ -14,14 +14,8 @@ use Opera\SampleSite\MyController;
 class DefaultController extends MyController
 {
 
-    public function indexGet(string $username = null) : Response
+    public function indexGet() : Response
     {
-        if ($username !== null) {
-            return new JsonResponse([
-                'username' => $username,
-            ]);
-        }
-
         return $this->render();
     }
 
