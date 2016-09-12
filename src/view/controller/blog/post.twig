@@ -1,0 +1,11 @@
+{% extends "layout/default.twig" %}
+
+{% block title %} {{ blog.title }}{% endblock %}
+
+{% block content %}
+    <div>
+        <small>Written by <a href="/user/{{ blog.user.username }}">@{{ blog.user.username }}</a></small>
+    </div>
+    {{ blog.post }}
+{% endblock %}
+

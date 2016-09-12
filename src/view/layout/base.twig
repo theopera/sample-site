@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Opera Framework - The Opera Sample Site</title>
+    <link rel="stylesheet" type="text/css" href="/asset/style/main.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h2>{{ app.var.name }} | {{ app.environment|capitalize }}</h2>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        <p class="text-center">
+            The Opera Framework &copy; {{ 'now'|date('Y') }}
+        </p>
+    </footer>
+</div>
+</body>
+</html>

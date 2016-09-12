@@ -1,0 +1,29 @@
+{% extends "layout/base.twig" %}
+{% block body %}
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+            {% if app.user == null %}
+                <li class="last"><a href="/login">Login</a></li>
+            {% else %}
+                <li class="last"><a href="/logout">Logout, {{ app.user.username|capitalize }}</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+    {% include 'block/messages.twig' %}
+
+    <main>
+        <h1>{% block title %}Welcome to The Opera Framework Sample Site{% endblock %}</h1>
+
+        {% block content %}
+            No content here yet.
+        {% endblock %}
+    </main>
+
+{% endblock %}

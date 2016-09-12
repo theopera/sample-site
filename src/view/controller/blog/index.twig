@@ -1,0 +1,13 @@
+{% extends "layout/default.twig" %}
+{% block title %}All Blog items{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for blog in blogs %}
+            <li>
+                <a href="/blog/{{ blog.id }}/{{ blog.urlTitle }}">{{ blog.title }}</a>, by
+                <a href="/user/{{ blog.user.username }}">@{{ blog.user.username }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

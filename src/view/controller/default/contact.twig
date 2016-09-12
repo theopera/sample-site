@@ -1,0 +1,44 @@
+{% extends "layout/default.twig" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <form method="post" class="col-8">
+            <div class="form-group">
+                <input type="text" id="name" name="name" autofocus placeholder="Please provide a name" required minlength="3" maxlength="200">
+                <label for="name">Name</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Please enter your e-mail address" required maxlength="250">
+                <label for="email">E-mail</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="What's the message all about?" required minlength="10" maxlength="200">
+                <label for="subject">Subject</label>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" id="message" rows="10" placeholder="..." required minlength="20" maxlength="5000"></textarea>
+                <label for="message">Message</label>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit">Send</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+        <div class="col-4">
+            <aside>
+                <p>
+                    Please fill in the contact form on the left side and we will be in touch shortly.
+                </p>
+                <p>
+                    Note that fields with an <span style="color: red">*</span> are required.
+                </p>
+            </aside>
+        </div>
+    </div>
+{% endblock %}

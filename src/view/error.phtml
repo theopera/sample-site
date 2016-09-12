@@ -1,0 +1,91 @@
+<?php
+/**
+ * @var $environment string
+ * @var $statusCode int
+ * @var $statusText string
+ *
+ * @var $throwable Throwable
+ */
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Opera Framework - The Opera Sample Site</title>
+    <link rel="stylesheet" type="text/css" href="/asset/style/main.css">
+
+    <style type="text/css">
+
+        .panel{
+            width: 100%;
+        }
+        .panel-heading {
+            padding: 20px;
+        }
+        .panel-heading h2{
+            margin: 0;
+            padding:0;
+            color: red;
+        }
+        .panel-body{
+            padding: 0 20px;
+        }
+
+        .text-center{
+            text-align: center;
+            font-size: 10pt;
+        }
+        hr{
+            border: 1px solid #eee;
+        }
+        pre{
+            overflow-x: scroll;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            line-height: 25px;
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h2>Error page</h2>
+    </header>
+
+
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h2 class="panel-title"><?=$statusCode?> <?=$statusText?></h2>
+        </div>
+
+
+        <div class="panel-body">
+            <p><?=$throwable->getMessage()?></p>
+            <?php if($environment !== 'production'): ?>
+                <hr>
+                <table border="0" cellpadding="4">
+                    <tr>
+                        <td><strong>Type:</strong></td><td><?=get_class($throwable)?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>File:</strong></td><td><?=$throwable->getFile()?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Line:</strong></td><td><?=$throwable->getLine()?></td>
+                    </tr>
+                </table>
+                <pre><?=htmlspecialchars($throwable->getTraceAsString())?></pre>
+            <?php endif ?>
+        </div>
+
+
+        <footer>
+        <p class="text-center">
+            The Opera Framework &copy; <?=date('Y')?>
+        </p>
+    </footer>
+</div>
+</body>
+</html>

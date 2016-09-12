@@ -1,0 +1,21 @@
+{% extends "layout/default.twig" %}
+
+{% block content %}
+    <p>
+        The idea behind this site is to demonstrate the power and capabilities of The Opera Framework.
+        As you might noticed, this project is still in alpha phase.
+    </p>
+
+    <p>
+        Currently this demo demonstrates the following features:
+    </p>
+    <ul>
+        <li>Database handling</li>
+        <li>Session handling</li>
+        <li>Authorization</li>
+        <li>Middleware, like a firewall, caching mechanism</li>
+        <li>Routing (e.g. /blog/12/title -> BlogController::postGet(int $id, string $title))</li>
+        <li>Sending mail</li>
+        <li><strong>But the framework has a lot more to offer...</strong></li>
+    </ul>
+{% endblock %}

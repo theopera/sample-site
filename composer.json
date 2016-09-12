@@ -1,0 +1,21 @@
+{
+    "name": "theopera/sample-site",
+    "description": "This project shows you some of the functionality The Opera Framework has to offer.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marc Heuker of Hoek",
+            "email": "me@marchoh.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Opera\\": "../Opera/src",
+            "Opera\\SampleSite\\": "src"
+        }
+    },
+	"require": {
+		"theopera/framework": "0.1a",
+		"theopera/twig-adapter": "1.0"
+	}
+}
