@@ -25,7 +25,7 @@ class WhiteListModel extends AbstractModel
         $statement->bindValue('ip', $ip, PDO::PARAM_STR);
         $statement->execute();
 
-        return $statement->fetchColumn() != 1;
+        return $statement->fetchColumn() == 1;
     }
 
 }
